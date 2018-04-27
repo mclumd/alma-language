@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="alma_ros_pkg" type="alma_node.py" name="alma_node"/>
+</launch>

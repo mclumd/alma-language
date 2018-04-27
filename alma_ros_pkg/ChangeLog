@@ -1,0 +1,6 @@
+10/1/2016:  changed message structure to view "Godel-codes" as strings
+	rather than integers, since this is needed for named formulae.
+	Also added a mechanism to allow for the loading of a file by
+	sending load("XYZZY").  This is a bit of a hack and the protocol
+	should probably be modified in the future.
+	
