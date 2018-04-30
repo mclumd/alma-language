@@ -192,7 +192,7 @@ def list_to_msg(db_list):
         # lines are of the form  CODE: FMLA
         # 10/1/2016:  Codes aren't necessarily integers; they are strings for named formulae.
         linep = line.split(':')
-        code = linep[0]
+        code = str(linep[0])
         fmla = linep[1]
 
         # Is this a distrust formula?  If so, mark the distrusted formula as distrusted.
@@ -200,15 +200,15 @@ def list_to_msg(db_list):
         # dictionary.
         m = parse.match(fmla)
         if m:
-            referent = int(m.group(1))
+            referent = str(m.group(1))
             timed = int(m.group(2)) # Not used right now, but that info is there
-            if msg_dict.has_key(referent):
+            if referent in msg_dict:
                 msg_dict[referent][1] = False
             else:
                 msg_dict[referent] = ["", False]
 
         # In any case, add the formula and mark it trusted *unless* we've already marked it
-        if msg_dict.has_key(code):
+        if code in msg_dict:
             msg_dict[code][0] = fmla
         else:
             msg_dict[code] = [fmla, True]

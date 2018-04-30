@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 Adapted from code by Sophie Li, 2016
-Updated, modified, expanded by Samuel Barham and Matthew Goldberg)
+Updated, modified, expanded by Samuel Barham and Matthew Goldberg
 
 Note: we subscribe to the 'language_input' topic, which is the topic to
 which all language input devices (read 'nodes') should publish their data.
